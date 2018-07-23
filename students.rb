@@ -29,28 +29,18 @@ class Student
   def set_cohort (cohort)
     @cohort = cohort
   end
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-# # Create a method that gets the student to talk (eg. Returns "I can talk!).
-#
-#   def talk
-#     return "I can talk"
-#   end
-#
+
+
+# Create a method that gets the student to talk (eg. Returns "I can talk!).
+
+  def talk
+    return "I can talk"
+  end
+
 # # Create a method that takes in a students favourite programming language and returns it as part of a string (eg. student1.say_favourite_language("Ruby") -> "I love Ruby").
-#
-# def say_fav_lang(lang)
-#   return "I love #{lang}"
-# end
-#
+
+def say_fav_lang(fav_lang)
+  return "I love #{fav_lang}"
+end
+
 end
