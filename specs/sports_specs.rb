@@ -1,0 +1,40 @@
+require('minitest/autorun')
+require_relative('../sports.rb')
+
+class TestTeam < MiniTest::Test
+
+  def setup
+    @team = Team.new("Glasgow Riders", ["Player 1"], "Tariq")
+
+  end
+
+  def test_team_name
+    assert_equal("Glasgow Riders", @team.team_name)
+  end
+
+  def test_player_names
+    assert_equal(["Player 1"], @team.player_names)
+  end
+
+  def test_coach_name
+    assert_equal("Tariq", @team.coach_name)
+  end
+
+  def test_set_coach_name
+    assert_equal("Pervaiz", @team.set_coach_name("Pervaiz"))
+  end
+
+  def test_add_new_player
+    @team.add_new_player("Player 2")
+    assert_equal(["Player 1", "Player 2"], @team.player_names)
+  end
+
+  def test_search_name_in_players
+    assert_equal(true, @team.search_name_in_players("Player 1"))
+  end
+
+  def test_name_NOTin_players
+    assert_equal(false, @team.search_name_in_players("Player 2"))
+  end
+
+end
