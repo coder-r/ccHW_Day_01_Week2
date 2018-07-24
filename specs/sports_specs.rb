@@ -29,21 +29,29 @@ class TestTeam < MiniTest::Test
     assert_equal(["Player 1", "Player 2"], @team.player_names)
   end
 
-  def test_search_name_in_players
-    assert_equal(true, @team.search_name_in_players("Player 1"))
-  end
+  def test_does_team_have_player
+    result = @team.isPlayerInSquad
 
-  def test_name_NOTin_players
-    assert_equal(false, @team.search_name_in_players("Player 2"))
+
+  # def test_search_name_in_players
+  #   assert_equal(true, @team.search_name_in_players("Player 1"))
+  # end
+  #
+  # def test_name_NOTin_players
+  #   assert_equal(false, @team.search_name_in_players("Player 2"))
   end
 
   def test_points
    assert_equal(0, @team.points)
- end
+  end
 
   def test_team_win
-    @team.add_match_results("Win")
-    assert_equal(3, @team.points)
+      @team.haswon(true)
+      assert_equal(3, @team.points)
+  end
+
+    # @team.add_match_results("Win")
+    # assert_equal(3, @team.points)
   end
 
 
